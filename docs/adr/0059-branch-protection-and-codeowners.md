@@ -2,7 +2,7 @@
 
 - Status: Accepted
 - Date: 2026-10-14
-- Extends: [0033](0033-protected-main-squash-merge.md)
+- Extends: [0033](0033-protected-main-squash-merge.md), [0043](0043-autonomous-merge-gated-by-demo.md) (adds a human gate for guardrail files, which 0043 had ruled out)
 
 ## Context
 

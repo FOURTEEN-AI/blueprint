@@ -1,6 +1,6 @@
 # 0061. Backlog folders and flow
 
-- Status: Accepted
+- Status: Superseded by [0074](0074-implemented-backlog-items-are-deleted.md)
 - Date: 2026-10-14
 - Extends: [0045](0045-in-repo-backlog-status-folders.md)
 

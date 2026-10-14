@@ -64,7 +64,7 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0058 | [Dependabot merge and release policy](0058-dependabot-merge-and-release-policy.md) | Accepted |
 | 0059 | [Branch protection without required reviews, and CODEOWNERS for guardrails](0059-branch-protection-and-codeowners.md) | Accepted |
 | 0060 | [Demo gate as a required status check posted with the human's credentials](0060-demo-gate-as-required-status-check.md) | Accepted |
-| 0061 | [Backlog folders and flow](0061-backlog-folders-and-flow.md) | Accepted |
+| 0061 | [Backlog folders and flow](0061-backlog-folders-and-flow.md) | Superseded by 0074 |
 | 0062 | [Backlog items as Cockburn use cases with a security impact section](0062-backlog-items-as-cockburn-use-cases.md) | Accepted |
 | 0063 | [Living use-case catalog, ID-tagged tests and the JGiven report](0063-living-use-case-catalog-and-jgiven-report.md) | Accepted |
 | 0064 | [Preview databases: one shared Neon branch with a database per PR](0064-preview-databases-in-shared-neon-branch.md) | Accepted |
@@ -77,3 +77,10 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0071 | [Production telemetry and origin lock are set up by /bootstrap and checked on every release](0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) | Accepted |
 | 0072 | [Demo status exemption for Dependabot dependency fixes](0072-demo-status-exemption-for-dependency-fixes.md) | Accepted |
 | 0073 | [Why restoring data from a snapshot is always manual](0073-why-data-restore-is-manual.md) | Accepted |
+| 0074 | [Implemented backlog items are deleted, not kept in done/](0074-implemented-backlog-items-are-deleted.md) | Accepted |
+| 0075 | [Generated projects are public repositories](0075-generated-projects-are-public.md) | Accepted |
+| 0076 | [The "Extends" relation between ADRs](0076-extends-relation-between-adrs.md) | Accepted |
+| 0077 | [Actuator on an internal management port, and health groups](0077-actuator-on-internal-management-port.md) | Accepted |
+| 0078 | [A workflow turns Dependabot major updates into backlog items](0078-dependabot-majors-become-backlog-items.md) | Accepted |
+| 0079 | [A single setup inventory owned by /bootstrap](0079-single-setup-inventory.md) | Accepted |
+| 0080 | [No edge caching at Cloudflare](0080-no-edge-caching.md) | Accepted |

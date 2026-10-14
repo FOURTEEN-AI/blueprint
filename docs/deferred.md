@@ -44,7 +44,7 @@ To be designed as a single piece, not item by item.
 - Who merges after a passed demo: the `/demo` session itself, or the autonomous loop on its next run ([0068](adr/0068-demo-flow.md)).
 
 **Already decided (inputs):**
-- Backlog folders and flow ([0061](adr/0061-backlog-folders-and-flow.md)).
+- Backlog folders and flow ([0074](adr/0074-implemented-backlog-items-are-deleted.md)).
 - Item templates as Cockburn use cases ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
 - The existing `grill-me` skill as the model for interactive refinement.
 
@@ -62,4 +62,5 @@ These aren't open decisions, but facts that couldn't be fully confirmed:
 - **Grafana webhook contact point**: whether a custom payload can produce the `repository_dispatch` body (`event_type`, `client_payload`), and whether the `client_payload` limits (10 top-level properties, 65535 characters) are enough ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
 - **OTLP export from Spring Boot 4**: metrics via the Micrometer OTLP registry, logs via the OpenTelemetry Logback appender, to Grafana Cloud's OTLP endpoint ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
 - **`jsonschema2pojo`** with Gradle 9, Java 25 and Jackson 3. If it fails, fall back to hand-written records plus a contract test ([0066](adr/0066-websocket-event-type-generation.md)).
+- **Fly health checks and metrics scraping** don't wake scaled-to-zero machines ([0077](adr/0077-actuator-on-internal-management-port.md)).
 - **JGiven 3.x** on Java 25 ([0067](adr/0067-jgiven-3-for-junit-6.md)).
