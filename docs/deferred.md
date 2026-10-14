@@ -47,22 +47,7 @@ To be designed as a single piece, not item by item.
 - Item templates as Cockburn use cases ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
 - The existing `grill-me` skill as the model for interactive refinement.
 
-## 4. `/demo` details
-
-**Open:** the details of the interactive demo flow ([0044](adr/0044-interactive-demo-and-feedback-triage.md)):
-- how Claude guides the human through the preview
-- how feedback is captured and sorted
-- the confirmation step before posting the status
-- redeploying expired previews
-- demoing several devices at once for live features
-
-**Already decided (inputs):**
-- A demo is required only for `feat`/`fix` PRs ([0057](adr/0057-demo-only-for-user-visible-changes.md)).
-- The `demo` status check is posted with the human's credentials ([0060](adr/0060-demo-gate-as-required-status-check.md)).
-- Feedback is committed into the demoed PR ([0061](adr/0061-backlog-folders-and-flow.md)).
-- What counts as critical (blocking) feedback ([0044](adr/0044-interactive-demo-and-feedback-triage.md)).
-
-## 5. Skills catalog
+## 4. Skills catalog
 
 Declined for now: an AGENTS.md section listing every skill (existing or planned) with its defining ADR. Planned skills are currently documented only in the ADRs.
 

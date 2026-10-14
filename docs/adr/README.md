@@ -47,7 +47,7 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0041 | [Claude Code first, with AGENTS.md as the source of truth](0041-claude-code-first-agents-md.md) | Accepted |
 | 0042 | [SDLC skill chain: refine, plan, implement, review and ship](0042-sdlc-skill-chain.md) | Proposed (details to be designed) |
 | 0043 | [Agents merge autonomously after a green build and a demo](0043-autonomous-merge-gated-by-demo.md) | Accepted |
-| 0044 | [Interactive /demo with feedback triage](0044-interactive-demo-and-feedback-triage.md) | Accepted (skill details to be designed) |
+| 0044 | [Interactive /demo with feedback triage](0044-interactive-demo-and-feedback-triage.md) | Accepted (flow in [0068](0068-demo-flow.md); skill text to be written) |
 | 0045 | [In-repo backlog organized as status folders](0045-in-repo-backlog-status-folders.md) | Accepted |
 | 0046 | [Autonomous backlog loop as a scheduled cloud agent, WIP limit 1](0046-autonomous-backlog-loop.md) | Accepted |
 | 0047 | [/bootstrap: GitHub template plus init script, fully automated with confirmation](0047-bootstrap-skill.md) | Accepted |
@@ -71,3 +71,4 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0065 | [Neon branch budget and snapshot retention](0065-neon-branch-budget.md) | Accepted |
 | 0066 | [Event types: JSON Schema with json-schema-to-typescript and jsonschema2pojo](0066-websocket-event-type-generation.md) | Accepted |
 | 0067 | [JGiven 3.x for JUnit 6 and Spring 7](0067-jgiven-3-for-junit-6.md) | Accepted |
+| 0068 | [/demo flow: guided scenarios, exploration and confirmed triage](0068-demo-flow.md) | Accepted |
