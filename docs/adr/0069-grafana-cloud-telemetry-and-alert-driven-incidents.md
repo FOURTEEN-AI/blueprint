@@ -1,6 +1,6 @@
 # 0069. Grafana Cloud for telemetry and alerts, with alerts becoming inbox items
 
-- Status: Accepted
+- Status: Accepted (WIP consequence superseded by [0070](0070-incident-items-exempt-from-wip-limit.md))
 - Date: 2026-10-14
 - Extends: [0036](0036-observability.md)
 
