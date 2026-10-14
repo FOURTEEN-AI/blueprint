@@ -75,3 +75,5 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0069 | [Grafana Cloud for telemetry and alerts, with alerts becoming inbox items](0069-grafana-cloud-telemetry-and-alert-driven-incidents.md) | Accepted (WIP consequence superseded by [0070](0070-incident-items-exempt-from-wip-limit.md)) |
 | 0070 | [Incident items are exempt from the WIP limit](0070-incident-items-exempt-from-wip-limit.md) | Accepted |
 | 0071 | [Production telemetry and origin lock are set up by /bootstrap and checked on every release](0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) | Accepted |
+| 0072 | [Demo status exemption for Dependabot dependency fixes](0072-demo-status-exemption-for-dependency-fixes.md) | Accepted |
+| 0073 | [Why restoring data from a snapshot is always manual](0073-why-data-restore-is-manual.md) | Accepted |

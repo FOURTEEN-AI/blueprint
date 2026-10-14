@@ -41,6 +41,7 @@ To be designed as a single piece, not item by item.
 - **implement**: the order of steps (acceptance test, spec, code), and when to stop and ask.
 - **review + ship**: the self-review checklist (architecture rules, expand/contract migrations, correct commit type), and handling CI failures.
 - How the autonomous loop chains these skills and what it does when one fails ([0046](adr/0046-autonomous-backlog-loop.md)).
+- Who merges after a passed demo: the `/demo` session itself, or the autonomous loop on its next run ([0068](adr/0068-demo-flow.md)).
 
 **Already decided (inputs):**
 - Backlog folders and flow ([0061](adr/0061-backlog-folders-and-flow.md)).
