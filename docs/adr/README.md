@@ -39,7 +39,7 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0033 | [Protected main, PR-only changes, squash merge](0033-protected-main-squash-merge.md) | Accepted |
 | 0034 | [Code quality and security tooling](0034-code-quality-and-security-tooling.md) | Accepted (coverage thresholds to be decided) |
 | 0035 | [Dependabot for dependency updates](0035-dependabot.md) | Accepted |
-| 0036 | [Observability: Actuator, JSON logs, Prometheus metrics and OpenTelemetry](0036-observability.md) | Accepted |
+| 0036 | [Observability: Actuator, JSON logs, Prometheus metrics and OpenTelemetry](0036-observability.md) | Accepted (tracing no longer opt-in in production, see [0071](0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md)) |
 | 0037 | [Configuration through Spring profiles and environment variables](0037-configuration-and-secrets.md) | Accepted |
 | 0038 | [Acceptance-test-first development with Gherkin criteria](0038-acceptance-test-first.md) | Accepted |
 | 0039 | [JGiven port-to-port tests against in-memory fakes](0039-jgiven-port-to-port-tests-with-in-memory-fakes.md) | Accepted |
@@ -74,3 +74,4 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0068 | [/demo flow: guided scenarios, exploration and confirmed triage](0068-demo-flow.md) | Accepted |
 | 0069 | [Grafana Cloud for telemetry and alerts, with alerts becoming inbox items](0069-grafana-cloud-telemetry-and-alert-driven-incidents.md) | Accepted (WIP consequence superseded by [0070](0070-incident-items-exempt-from-wip-limit.md)) |
 | 0070 | [Incident items are exempt from the WIP limit](0070-incident-items-exempt-from-wip-limit.md) | Accepted |
+| 0071 | [Production telemetry and origin lock are set up by /bootstrap and checked on every release](0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) | Accepted |

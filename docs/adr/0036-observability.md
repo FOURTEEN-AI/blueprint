@@ -1,6 +1,6 @@
 # 0036. Observability: Actuator, JSON logs, Prometheus metrics and OpenTelemetry
 
-- Status: Accepted
+- Status: Accepted (tracing no longer opt-in in production, see [0071](0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md))
 - Date: 2026-10-14
 
 ## Context
