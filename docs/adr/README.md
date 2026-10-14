@@ -55,3 +55,8 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0049 | [Blueprint's CI tests only the template app](0049-template-self-test-scope.md) | Accepted |
 | 0050 | [Minimal open-source community files](0050-minimal-community-files.md) | Accepted |
 | 0051 | [PR previews use a fresh database inside their Neon branch](0051-preview-databases-as-fresh-database-in-pr-branch.md) | Accepted |
+| 0052 | [Cloudflare in front of production](0052-cloudflare-in-front-of-production.md) | Accepted |
+| 0053 | [Turnstile bot check once per session for writes and WebSockets](0053-turnstile-session-for-writes-and-websockets.md) | Accepted |
+| 0054 | [Generic app-level abuse limits](0054-app-level-abuse-limits.md) | Accepted |
+| 0055 | [PR previews stay on fly.dev; environments differ only in configuration](0055-previews-on-fly-dev-and-environment-parity.md) | Accepted |
+| 0056 | [Safeguards for blueprint's public demo deployment](0056-demo-deployment-safeguards.md) | Accepted |
