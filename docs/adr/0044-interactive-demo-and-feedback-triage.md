@@ -1,6 +1,6 @@
 # 0044. Interactive /demo with feedback triage
 
-- Status: Accepted (skill details to be designed)
+- Status: Accepted (flow in [0068](0068-demo-flow.md); skill text to be written)
 - Date: 2026-10-14
 
 ## Context

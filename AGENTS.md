@@ -12,7 +12,7 @@ Instructions for AI coding agents working in this repository.
 ## ADR rules
 
 - Before changing or proposing anything, **read the relevant ADRs**. Don't contradict an accepted ADR silently. If a change conflicts with one, point that out.
-- **Never edit an accepted ADR's content.** To change a decision, write a new ADR that supersedes it, and change only the old ADR's status line to `Superseded by [NNNN](…)`. Additions that don't reverse a decision get a new ADR with an `Extends:` line.
+- **Never edit an accepted ADR's content, except its status line.** To change a decision, write a new ADR that supersedes it, and change the old ADR's status line to `Superseded by [NNNN](…)`. The status line may also note progress, e.g. when open details get resolved by a later ADR. Additions that don't reverse a decision get a new ADR with an `Extends:` line.
 - New ADRs:
   - are numbered sequentially: `docs/adr/NNNN-kebab-case-title.md`
   - use the format Status, Date, Context, Decision, Consequences (see [0001](docs/adr/0001-record-architecture-decisions.md))
