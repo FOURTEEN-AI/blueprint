@@ -1,6 +1,6 @@
 # 0051. PR previews use a fresh database inside their Neon branch
 
-- Status: Accepted
+- Status: Superseded by [0064](0064-preview-databases-in-shared-neon-branch.md)
 - Date: 2026-10-14
 - Supersedes: [0027](0027-pr-preview-environments.md)
 
