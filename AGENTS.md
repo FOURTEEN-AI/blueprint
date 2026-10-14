@@ -17,7 +17,7 @@ Instructions for AI coding agents working in this repository.
   - are numbered sequentially: `docs/adr/NNNN-kebab-case-title.md`
   - use the format Status, Date, Context, Decision, Consequences (see [0001](docs/adr/0001-record-architecture-decisions.md))
   - record the rejected alternatives and the facts the decision relies on
-- Keep [docs/adr/README.md](docs/adr/README.md) up to date, and add or remove entries in [docs/deferred.md](docs/deferred.md) when a topic is deferred or resolved.
+- Keep [docs/adr/README.md](docs/adr/README.md) up to date: an ADR's status line and its index entry must always read the same. Add or remove entries in [docs/deferred.md](docs/deferred.md) when a topic is deferred or resolved.
 
 ## Working conventions
 
