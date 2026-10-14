@@ -57,5 +57,8 @@ These aren't open decisions, but facts that couldn't be fully confirmed:
 
 - **Cloudflare free plan**: one IP-based rate-limiting rule with a short fixed window ([0052](adr/0052-cloudflare-in-front-of-production.md)).
 - **Neon free plan**: root-branch and total-branch limits ([0064](adr/0064-preview-databases-in-shared-neon-branch.md), [0065](adr/0065-neon-branch-budget.md)).
+- **Grafana Cloud free tier**: limits for metrics series, log volume, trace volume and alert rules ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
+- **Grafana webhook contact point**: whether a custom payload can produce the `repository_dispatch` body (`event_type`, `client_payload`), and whether the `client_payload` limits (10 top-level properties, 65535 characters) are enough ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
+- **OTLP export from Spring Boot 4**: metrics via the Micrometer OTLP registry, logs via the OpenTelemetry Logback appender, to Grafana Cloud's OTLP endpoint ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
 - **`jsonschema2pojo`** with Gradle 9, Java 25 and Jackson 3. If it fails, fall back to hand-written records plus a contract test ([0066](adr/0066-websocket-event-type-generation.md)).
 - **JGiven 3.x** on Java 25 ([0067](adr/0067-jgiven-3-for-junit-6.md)).

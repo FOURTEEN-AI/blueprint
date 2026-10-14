@@ -72,3 +72,4 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0066 | [Event types: JSON Schema with json-schema-to-typescript and jsonschema2pojo](0066-websocket-event-type-generation.md) | Accepted |
 | 0067 | [JGiven 3.x for JUnit 6 and Spring 7](0067-jgiven-3-for-junit-6.md) | Accepted |
 | 0068 | [/demo flow: guided scenarios, exploration and confirmed triage](0068-demo-flow.md) | Accepted |
+| 0069 | [Grafana Cloud for telemetry and alerts, with alerts becoming inbox items](0069-grafana-cloud-telemetry-and-alert-driven-incidents.md) | Accepted |
