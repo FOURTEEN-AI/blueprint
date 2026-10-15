@@ -114,6 +114,7 @@ Previews use Turnstile's public **test keys** and have **no** `ORIGIN_AUTH_SECRE
   - `build.gradle`, `settings.gradle`, `fly.toml`
   - `AGENTS.md`, `CLAUDE.md`, `docs/adr/`
   - the architecture tests, the traceability check, and the lint, format, TypeScript and test-runner configuration
+  - `ops/grafana/alerts/` (alert rules and contact points), but not the dashboards ([0100](adr/0100-alert-rules-are-code-owned.md))
 - **Pages** is enabled for the JGiven report ([0063](adr/0063-living-use-case-catalog-and-jgiven-report.md)).
 - The **GHCR package** is public ([0030](adr/0030-container-images-with-jib.md), [0075](adr/0075-generated-projects-are-public.md)). PR images are deleted with their preview, and the last 5 release images are kept ([0098](adr/0098-ghcr-image-retention.md)).
 - `dependabot.yml`:

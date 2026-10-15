@@ -105,3 +105,4 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0097 | [OpenAPI generators: openapi-generator for Spring, openapi-typescript for the client](0097-openapi-generators.md) | Accepted |
 | 0098 | [Container image retention in GHCR](0098-ghcr-image-retention.md) | Accepted |
 | 0099 | [Backlog items for Dependabot major updates are deduplicated](0099-dependabot-major-items-are-deduplicated.md) | Accepted |
+| 0100 | [Alert rules are code-owned, dashboards are not](0100-alert-rules-are-code-owned.md) | Accepted |

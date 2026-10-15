@@ -29,7 +29,7 @@ To be designed as a single piece, not item by item.
 
 **Already decided (inputs):**
 - Claude Code first, with AGENTS.md as the source of truth ([0041](adr/0041-claude-code-first-agents-md.md)).
-- CODEOWNERS protects `.github/`, `.claude/` and the guardrail configuration ([0059](adr/0059-branch-protection-and-codeowners.md), [0089](adr/0089-codeowners-scope-and-admin-bypass.md)).
+- CODEOWNERS protects `.github/`, `.claude/` the guardrail configuration and the alert rules ([0059](adr/0059-branch-protection-and-codeowners.md), [0089](adr/0089-codeowners-scope-and-admin-bypass.md), [0100](adr/0100-alert-rules-are-code-owned.md)).
 - A hook blocks commit-status API calls outside `/demo` ([0088](adr/0088-demo-status-from-local-sessions.md)).
 - The loop's GitHub App has no workflows permission ([0084](adr/0084-project-github-app-as-bot-identity.md)).
 - Conventional Commits are checked on PR titles in CI only, not by a local hook ([0096](adr/0096-pr-title-is-the-only-conventional-commit.md)).
