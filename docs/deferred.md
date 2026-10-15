@@ -61,7 +61,6 @@ Declined for now: an AGENTS.md section listing every skill (existing or planned)
 Not open decisions, but deliverables that ADRs require:
 
 - **Restore runbook** for restoring data from a `pre-vX.Y.Z` snapshot ([0073](adr/0073-why-data-restore-is-manual.md)).
-- **Devcontainer**: add pnpm and read `.node-version` ([0081](adr/0081-pnpm-standalone-without-corepack.md)); add `flyctl`, which `/bootstrap` needs ([0047](adr/0047-bootstrap-skill.md)).
 
 ## To verify during implementation
 

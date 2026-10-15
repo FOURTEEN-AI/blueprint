@@ -10,9 +10,12 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "moby": false
     },
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
   },
   "remoteEnv": {
-    "GH_TOKEN": "${localEnv:GH_TOKEN}"
-  }
+    "GH_TOKEN": "${localEnv:GH_TOKEN}",
+    "PATH": "${containerEnv:PATH}:/home/vscode/.fly/bin"
+  },
+  "postCreateCommand": ".devcontainer/post-create.sh"
 }
