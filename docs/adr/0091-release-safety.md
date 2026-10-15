@@ -2,7 +2,7 @@
 
 - Status: Accepted
 - Date: 2026-10-15
-- Extends: [0029](0029-pre-migration-neon-snapshots-and-auto-rollback.md), [0031](0031-github-actions-ci-cd.md), [0069](0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)
+- Extends: [0029](0029-pre-migration-neon-snapshots-and-auto-rollback.md), [0031](0031-github-actions-ci-cd.md), [0069](0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0070](0070-incident-items-exempt-from-wip-limit.md) (items from a rollback are incidents too, not only items from alerts)
 
 ## Context
 
