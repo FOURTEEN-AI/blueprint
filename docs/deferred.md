@@ -2,25 +2,7 @@
 
 These topics were deliberately deferred during the design of blueprint (2026-10-14 and 2026-10-15). The decisions already made are recorded as ADRs in [docs/adr/](adr/README.md). When a topic gets resolved, record it as an ADR and remove it here.
 
-## 1. Testing strategy (as a whole)
-
-To be designed as a single piece, not item by item. A draft that resolves this topic is in [testing-strategy.md](testing-strategy.md); it becomes ADRs once reviewed.
-
-**Open:**
-- Coverage and quality-gate thresholds (JaCoCo, SonarCloud "new code"), e.g. a percentage, or mutation testing (PIT) on the domain and application layers.
-- How the test levels fit together beyond the decisions below, and what belongs on which level.
-- Test data strategy, fakes versus contract tests for fakes, and test naming conventions.
-
-**Already decided (inputs):**
-- Acceptance tests come first, with Gherkin criteria ([0038](adr/0038-acceptance-test-first.md)).
-- JGiven port-to-port tests run against in-memory fakes; adapters get Testcontainers integration tests ([0039](adr/0039-jgiven-port-to-port-tests-with-in-memory-fakes.md), [0067](adr/0067-jgiven-3-for-junit-6.md)).
-- Playwright runs the full suite in CI and a smoke subset against previews and prod ([0040](adr/0040-playwright-e2e-placement.md)).
-- Use-case IDs are tags on tests, with a traceability check and the JGiven report on Pages ([0063](adr/0063-living-use-case-catalog-and-jgiven-report.md)).
-- Quality tooling is chosen; thresholds are open ([0034](adr/0034-code-quality-and-security-tooling.md)).
-- Every use case gets full-context API tests over real HTTP ([0101](adr/0101-full-context-api-tests-per-use-case.md)).
-- Infrastructure smoke tests survive `/bootstrap` and are exempt from the traceability check ([0092](adr/0092-infrastructure-smoke-tests.md)).
-
-## 2. Guardrails and gates (AI kit)
+## 1. Guardrails and gates (AI kit)
 
 **Open:** which actions hooks hard-block and which go through a permission prompt, and the permission allowlist. Candidates discussed:
 - block dangerous commands: pushing to `main`, force-push, editing guardrail files, reading secret-like files, destructive `fly`/Neon commands against prod
@@ -35,7 +17,7 @@ To be designed as a single piece, not item by item. A draft that resolves this t
 - Conventional Commits are checked on PR titles in CI only, not by a local hook ([0096](adr/0096-pr-title-is-the-only-conventional-commit.md)).
 - No secrets in the working tree ([0037](adr/0037-configuration-and-secrets.md)).
 
-## 3. SDLC skill details
+## 2. SDLC skill details
 
 **Open:** what each skill in the chain actually contains ([0042](adr/0042-sdlc-skill-chain.md), status *Proposed*):
 
@@ -52,9 +34,21 @@ To be designed as a single piece, not item by item. A draft that resolves this t
 - Refine runs during triage, so items in `ready/` are always fully dressed ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
 - `/demo` enables auto-merge after a passed demo ([0103](adr/0103-demo-enables-auto-merge.md)).
 
-## 4. Skills catalog
+## 3. Skills catalog
 
 Declined for now: an AGENTS.md section listing every skill (existing or planned) with its defining ADR. Planned skills are currently documented only in the ADRs.
+
+## 4. Test gate tooling
+
+**Open:** how the test checks are implemented. Candidates: an external Gradle plugin (e.g. deterministic-gates), a convention plugin in this repository, or standard tools where they suffice (PIT, ArchUnit, Spring Modulith).
+
+**Already decided (inputs):** the rules to enforce:
+- layer disjointness per module ([0105](adr/0105-test-levels-and-layer-disjointness.md))
+- criticality, PIT target set and thresholds ([0106](adr/0106-criticality-and-quality-thresholds.md))
+- a contract test for every fake ([0107](adr/0107-contract-tests-for-fakes.md))
+- the exceptions register ([0110](adr/0110-test-exceptions-register.md))
+- the stage package location ([0111](adr/0111-test-naming-and-report-structure.md))
+- use-case traceability ([0063](adr/0063-living-use-case-catalog-and-jgiven-report.md))
 
 ## To do during implementation
 
@@ -82,3 +76,6 @@ These aren't open decisions, but facts that couldn't be fully confirmed:
 - **`jsonschema2pojo`** with Gradle 9, Java 25 and Jackson 3. If it fails, fall back to hand-written records plus a contract test ([0066](adr/0066-websocket-event-type-generation.md)).
 - **Fly health checks and metrics scraping** don't wake scaled-to-zero machines ([0077](adr/0077-actuator-on-internal-management-port.md)).
 - **JGiven 3.x** on Java 25 ([0067](adr/0067-jgiven-3-for-junit-6.md)).
+- **JaCoCo per test level**, including the Playwright run against the built JAR (JaCoCo agent on the JAR), as input for layer disjointness ([0105](adr/0105-test-levels-and-layer-disjointness.md)).
+- **PIT** with Java 25, JUnit 6 and JGiven 3.x ([0106](adr/0106-criticality-and-quality-thresholds.md), [0067](adr/0067-jgiven-3-for-junit-6.md)).
+- **jqwik** with JUnit 6 ([0108](adr/0108-visibility-rules-and-invariants-in-use-cases.md)).

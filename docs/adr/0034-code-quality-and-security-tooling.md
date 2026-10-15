@@ -1,6 +1,6 @@
 # 0034. Code quality and security tooling
 
-- Status: Accepted (coverage thresholds to be decided)
+- Status: Accepted (thresholds decided in [0106](0106-criticality-and-quality-thresholds.md))
 - Date: 2026-10-14
 
 ## Context

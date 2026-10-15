@@ -39,7 +39,7 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0031 | [GitHub Actions for CI and continuous delivery](0031-github-actions-ci-cd.md) | Accepted |
 | 0032 | [semantic-release with Conventional Commits](0032-semantic-release-and-conventional-commits.md) | Accepted |
 | 0033 | [Protected main, PR-only changes, squash merge](0033-protected-main-squash-merge.md) | Accepted |
-| 0034 | [Code quality and security tooling](0034-code-quality-and-security-tooling.md) | Accepted (coverage thresholds to be decided) |
+| 0034 | [Code quality and security tooling](0034-code-quality-and-security-tooling.md) | Accepted (thresholds decided in [0106](0106-criticality-and-quality-thresholds.md)) |
 | 0035 | [Dependabot for dependency updates](0035-dependabot.md) | Accepted |
 | 0036 | [Observability: Actuator, JSON logs, Prometheus metrics and OpenTelemetry](0036-observability.md) | Accepted (tracing no longer opt-in in production, see [0071](0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md)) |
 | 0037 | [Configuration through Spring profiles and environment variables](0037-configuration-and-secrets.md) | Accepted |
@@ -110,3 +110,10 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0102 | [Hooks: format on every edit, full build before stopping](0102-format-on-edit-and-full-build-stop-hook.md) | Accepted |
 | 0103 | [/demo enables auto-merge after a passed demo](0103-demo-enables-auto-merge.md) | Accepted |
 | 0104 | [Devcontainer tools come from official sources, not community features](0104-devcontainer-tools-from-official-sources.md) | Accepted |
+| 0105 | [Test levels and layer disjointness](0105-test-levels-and-layer-disjointness.md) | Accepted |
+| 0106 | [Criticality and quality thresholds](0106-criticality-and-quality-thresholds.md) | Accepted |
+| 0107 | [Contract tests for every in-memory fake](0107-contract-tests-for-fakes.md) | Accepted |
+| 0108 | [Visibility rules and invariants in use cases](0108-visibility-rules-and-invariants-in-use-cases.md) | Accepted |
+| 0109 | [Test hygiene: no retries, no sleeps, data through legal transitions](0109-test-hygiene.md) | Accepted |
+| 0110 | [Test exceptions register](0110-test-exceptions-register.md) | Accepted |
+| 0111 | [Test naming and the two-part JGiven report](0111-test-naming-and-report-structure.md) | Accepted |
