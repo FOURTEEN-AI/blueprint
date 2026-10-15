@@ -13,6 +13,7 @@ The complete list of what a project generated from blueprint needs: accounts, se
 | Fly.io | production app and PR preview apps, in one organization | [0022](adr/0022-fly-io-hosting.md), [0083](adr/0083-fly-tokens-per-purpose.md) |
 | Neon | PostgreSQL: production branch, `previews` branch, snapshots | [0025](adr/0025-neon-as-production-database.md), [0090](adr/0090-pr-preview-environments.md) |
 | Cloudflare (free plan) + **own domain** | DNS, proxy, rate limiting, origin lock, Turnstile | [0052](adr/0052-cloudflare-in-front-of-production.md), [0053](adr/0053-turnstile-session-for-writes-and-websockets.md) |
+| Grafana Cloud (free tier) | metrics, logs and traces over OTLP, Faro, dashboards, alerts | [0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) |
 | SonarCloud | quality gate | [0034](adr/0034-code-quality-and-security-tooling.md) |
 | Claude Code | AI workflow and the scheduled cloud agent for the backlog loop | [0041](adr/0041-claude-code-first-agents-md.md), [0046](adr/0046-autonomous-backlog-loop.md) |
 
@@ -40,12 +41,13 @@ Workflows that run PR code get no Fly or Neon secrets. Those secrets live in Git
 | `FLY_DEPLOY_TOKEN` | Fly **deploy** token for the production app: deploy and rollback | `/bootstrap` | [0083](adr/0083-fly-tokens-per-purpose.md) |
 | `NEON_API_KEY` | pre-migration snapshots and their retention | `/bootstrap` | [0029](adr/0029-pre-migration-neon-snapshots-and-auto-rollback.md), [0065](adr/0065-neon-branch-budget.md) |
 | `SMOKE_BYPASS_SECRET` | prod smoke test bypasses Turnstile | `/bootstrap` (random) | [0053](adr/0053-turnstile-session-for-writes-and-websockets.md) |
+| `GRAFANA_SERVICE_ACCOUNT_TOKEN` | deploy dashboards and alert rules from `ops/grafana/` | `/bootstrap` | [0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) |
 
 ### GitHub: environment `automation` (restricted to `main`)
 
 | Name | Purpose | Created by | ADR |
 |---|---|---|---|
-| `BOT_APP_PRIVATE_KEY` | mint project App tokens: Dependabot auto-merge, major-update items, revert PR after a rollback | `/bootstrap` (App creation needs a manual browser step) | [0084](adr/0084-project-github-app-as-bot-identity.md), [0091](adr/0091-release-safety.md) |
+| `BOT_APP_PRIVATE_KEY` | mint project App tokens: Dependabot auto-merge, major-update items, incident-item PRs, revert PR after a rollback | `/bootstrap` (App creation needs a manual browser step) | [0084](adr/0084-project-github-app-as-bot-identity.md), [0091](adr/0091-release-safety.md) |
 
 ### GitHub: Dependabot secrets
 
@@ -64,6 +66,7 @@ Workflows that run PR code get no Fly or Neon secrets. Those secrets live in Git
 | `TURNSTILE_SECRET_KEY` | verify Turnstile tokens | `/bootstrap` (Turnstile widget) | [0053](adr/0053-turnstile-session-for-writes-and-websockets.md) |
 | `SESSION_SIGNING_KEY` | HMAC key for the session cookie | `/bootstrap` (random) | [0053](adr/0053-turnstile-session-for-writes-and-websockets.md) |
 | `SMOKE_BYPASS_SECRET` | the session endpoint accepts it instead of a Turnstile token | `/bootstrap` (same value as the GitHub secret) | [0053](adr/0053-turnstile-session-for-writes-and-websockets.md) |
+| `OTEL_EXPORTER_OTLP_HEADERS` | Grafana Cloud OTLP credentials | `/bootstrap` | [0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) |
 
 ### Fly secrets: preview apps (set by CI per PR)
 
@@ -85,7 +88,9 @@ Previews use Turnstile's public **test keys** and have **no** `ORIGIN_AUTH_SECRE
 |---|---|---|
 | `TURNSTILE_SITE_KEY` | public site key (test key in CI and previews) | [0053](adr/0053-turnstile-session-for-writes-and-websockets.md) |
 | `SPRING_PROFILES_ACTIVE` | `prod`, `preview`; `migrate` for the release command | [0012](adr/0012-migrations-via-fly-release-command.md), [0037](adr/0037-configuration-and-secrets.md) |
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | optional; tracing is off when unset | [0036](adr/0036-observability.md) |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | Grafana Cloud OTLP endpoint. **Required in production**; export is off when unset (local, previews) | [0036](adr/0036-observability.md), [0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) |
+| `FARO_COLLECTOR_URL` | Grafana Faro collector for the frontend. Required in production; Faro is off when unset | [0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md) |
+| `GRAFANA_URL` | GitHub Actions variable: the Grafana stack the release workflow deploys dashboards to | [0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md) |
 | `IMPRINT_URL`, `PRIVACY_URL` | footer links to the operator's legal documents; `/bootstrap` requires replacing or keeping them | [0095](adr/0095-legal-page-links.md) |
 | `NEON_PROJECT_ID` | GitHub Actions variable | [0090](adr/0090-pr-preview-environments.md) |
 | `FLY_ORG` | GitHub Actions variable: the organization preview apps are created in | [0083](adr/0083-fly-tokens-per-purpose.md) |
@@ -144,6 +149,13 @@ Previews use Turnstile's public **test keys** and have **no** `ORIGIN_AUTH_SECRE
 - A cache rule that bypasses the cache for everything ([0080](adr/0080-no-edge-caching.md)).
 - A Turnstile widget for the production hostname ([0053](adr/0053-turnstile-session-for-writes-and-websockets.md)).
 - The Cloudflare API token is used only by `/bootstrap` and isn't stored as a CI secret.
+
+### Grafana Cloud
+- A stack with OTLP ingestion and a Faro app ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md)).
+- A service account for deploying `ops/grafana/` from the release workflow.
+- Alert rules on the HTTP 5xx rate and latency, firing only on existing data.
+- Contact points: **email** to the owner, and a **webhook** calling GitHub's `repository_dispatch` with event type `grafana-alert`. The webhook holds a fine-grained GitHub token limited to this repository. GitHub has no API for creating such tokens, so `/bootstrap` asks the user to create it.
+- `/bootstrap` records completed and skipped steps in `.blueprint`, and the release workflow warns about missing production telemetry or origin-lock configuration ([0071](adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md)).
 
 ### SonarCloud
 - A project bound to the repository, with a quality gate. Thresholds are to be decided ([0034](adr/0034-code-quality-and-security-tooling.md), [deferred](deferred.md)).

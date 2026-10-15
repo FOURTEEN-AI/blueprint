@@ -48,12 +48,13 @@ To run a project created from blueprint you'll need:
 - **Fly.io**: hosting for production and previews
 - **Neon**: serverless PostgreSQL
 - **Cloudflare** (free plan): **your own domain** managed by Cloudflare, which is mandatory ([0052](docs/adr/0052-cloudflare-in-front-of-production.md))
+- **Grafana Cloud** (free tier): production telemetry and alerts ([0069](docs/adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md), [0071](docs/adr/0071-production-telemetry-and-origin-lock-set-up-by-bootstrap.md))
 - **SonarCloud**: free for public repositories
 - **Claude Code**, for the AI workflow
 
 The complete list of accounts, secrets and settings is in [docs/setup.md](docs/setup.md).
 
-**Rough costs:** Neon, Cloudflare and SonarCloud have free tiers that cover a typical project. Fly.io has no real free tier for new accounts, but with scale-to-zero, a low-traffic project usually costs **a few dollars a month (roughly $0–10)**. Add **about €10–15 a year** for the domain. These are estimates. Check the providers' current pricing before you start.
+**Rough costs:** Neon, Cloudflare, Grafana Cloud and SonarCloud have free tiers that cover a typical project. Fly.io has no real free tier for new accounts, but with scale-to-zero, a low-traffic project usually costs **a few dollars a month (roughly $0–10)**. Add **about €10–15 a year** for the domain. These are estimates. Check the providers' current pricing before you start.
 
 **Backups:** all recovery options live inside Neon (its point-in-time restore window and the last 5 pre-migration snapshots). If your project holds data you can't afford to lose, add your own backup outside Neon ([0094](docs/adr/0094-no-backup-outside-neon.md)).
 

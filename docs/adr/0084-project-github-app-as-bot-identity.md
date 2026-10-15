@@ -16,7 +16,7 @@ Several automations act on the repository: the 0078 workflow opens a `chore` PR,
 - Every project has its own **GitHub App** (the "project bot"), installed only on that repository, with:
   - **contents: write** and **pull requests: write**
   - **no commit statuses**, **no administration** and **no workflows** permission
-- Workflows obtain short-lived tokens with `actions/create-github-app-token`. That covers the 0078 workflow, enabling auto-merge on Dependabot PRs, and the revert PR after a rollback (ADR 0091).
+- Workflows obtain short-lived tokens with `actions/create-github-app-token`. That covers the 0078 workflow, enabling auto-merge on Dependabot PRs, the `chore` PR for incident items from Grafana alerts (ADR 0069), and the revert PR after a rollback (ADR 0091).
 - The **autonomous loop** uses the same App: the routine mints its own tokens from the App's key, and the Claude GitHub App isn't needed on the repository.
 - `/bootstrap` guides creating the App. That includes a manual browser step, because GitHub requires one to create an App.
 

@@ -96,7 +96,7 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0088 | [Demo status from local sessions: a hook as a speed bump](0088-demo-status-from-local-sessions.md) | Accepted |
 | 0089 | [CODEOWNERS covers all guardrail configuration; admin bypass for the maintainer](0089-codeowners-scope-and-admin-bypass.md) | Accepted |
 | 0090 | [PR preview environments](0090-pr-preview-environments.md) | Accepted |
-| 0091 | [Release safety: serialized releases, a revert after every rollback, alerts through GitHub](0091-release-safety.md) | Accepted |
+| 0091 | [Release safety: serialized releases and a revert after every rollback](0091-release-safety.md) | Accepted |
 | 0092 | [Infrastructure smoke tests survive bootstrap](0092-infrastructure-smoke-tests.md) | Accepted |
 | 0093 | [The WebSocket pauses while the tab is hidden](0093-websocket-pauses-in-hidden-tabs.md) | Accepted |
 | 0094 | [No backup outside Neon](0094-no-backup-outside-neon.md) | Accepted |
