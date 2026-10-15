@@ -25,9 +25,10 @@ These topics were deliberately deferred during the design of blueprint (2026-10-
 - **plan**: the format of the plan, and how it covers modules, onion layers, spec and migration changes.
 - **implement**: the order of steps (acceptance test, spec, code), and when to stop and ask.
 - **review + ship**: the self-review checklist (architecture rules, expand/contract migrations, correct commit type), and handling CI failures.
-- How the autonomous loop chains these skills and what it does when one fails ([0046](adr/0046-autonomous-backlog-loop.md)).
+- The gate script for each stage (what exactly it checks) and the format of the stage state file.
 
 **Already decided (inputs):**
+- How the loop chains the skills, handles failures and starts follow-up runs ([0118](adr/0118-loop-orchestration.md)).
 - Backlog folders and flow ([0074](adr/0074-implemented-backlog-items-are-deleted.md)).
 - Item templates as Cockburn use cases ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
 - The existing `grill-me` skill as the model for interactive refinement.
@@ -68,6 +69,8 @@ These aren't open decisions, but facts that couldn't be fully confirmed:
 - **Grafana webhook contact point**: whether a custom payload can produce the `repository_dispatch` body (`event_type`, `client_payload`), and whether the `client_payload` limits (10 top-level properties, 65535 characters) are enough ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
 - **OTLP export from Spring Boot 4**: metrics via the Micrometer OTLP registry, logs via the OpenTelemetry Logback appender, to Grafana Cloud's OTLP endpoint ([0069](adr/0069-grafana-cloud-telemetry-and-alert-driven-incidents.md)).
 - **Claude Code cloud routine**: that it can authenticate to GitHub as the project App, and that its sandbox runs Java 25, Docker (Testcontainers) and Playwright browsers ([0046](adr/0046-autonomous-backlog-loop.md), [0084](adr/0084-project-github-app-as-bot-identity.md)).
+- **Routine trigger from a workflow**: that a Claude Code routine can be started through an API call from GitHub Actions, and which token that needs ([0118](adr/0118-loop-orchestration.md)).
+- **Subscription billing for `claude -p` and routines**: Anthropic paused the move of programmatic usage to a separate credit. Re-check before relying on it ([0118](adr/0118-loop-orchestration.md)).
 - **Dependabot and `workflow_run`**: that a `workflow_run` workflow following a Dependabot-triggered run receives environment secrets ([0085](adr/0085-untrusted-build-trusted-deploy.md)).
 - **Dependabot with Gradle**: whether it distinguishes runtime from development dependencies for the `fix(deps)` / `build(deps)` prefixes. If not, Gradle plugin updates become patch releases, which is harmless ([0058](adr/0058-dependabot-merge-and-release-policy.md)).
 - **openapi-generator** `spring` generator with Spring Boot 4 and Jackson 3 ([0097](adr/0097-openapi-generators.md)).

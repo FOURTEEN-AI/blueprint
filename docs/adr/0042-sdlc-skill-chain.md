@@ -1,6 +1,6 @@
 # 0042. SDLC skill chain: refine, plan, implement, review and ship
 
-- Status: Proposed (details to be designed)
+- Status: Proposed (details to be designed; orchestration decided in [0118](0118-loop-orchestration.md))
 - Date: 2026-10-14
 
 ## Context

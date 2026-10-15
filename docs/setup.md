@@ -48,6 +48,7 @@ Workflows that run PR code get no Fly or Neon secrets. Those secrets live in Git
 | Name | Purpose | Created by | ADR |
 |---|---|---|---|
 | `BOT_APP_PRIVATE_KEY` | mint project App tokens: Dependabot auto-merge, major-update items, incident-item PRs, revert PR after a rollback | `/bootstrap` (App creation needs a manual browser step) | [0084](adr/0084-project-github-app-as-bot-identity.md), [0091](adr/0091-release-safety.md) |
+| `LOOP_TRIGGER_TOKEN` | token that starts the loop routine after a loop PR merged. Exact kind to be verified ([deferred](deferred.md)) | `/bootstrap` (manual step) | [0118](adr/0118-loop-orchestration.md) |
 
 ### GitHub: Dependabot secrets
 
@@ -163,4 +164,4 @@ Previews use Turnstile's public **test keys** and have **no** `ORIGIN_AUTH_SECRE
 - **Automatic Analysis** is turned off, because the analysis runs in CI.
 
 ### Claude Code
-- A scheduled cloud agent (routine) for the backlog loop, authenticated to GitHub as the project App ([0046](adr/0046-autonomous-backlog-loop.md), [0084](adr/0084-project-github-app-as-bot-identity.md)).
+- A scheduled cloud agent (routine) for the backlog loop, authenticated to GitHub as the project App ([0046](adr/0046-autonomous-backlog-loop.md), [0084](adr/0084-project-github-app-as-bot-identity.md)). It runs hourly and is also started by a workflow after a loop PR merged ([0118](adr/0118-loop-orchestration.md)).

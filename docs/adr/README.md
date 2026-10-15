@@ -47,7 +47,7 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0039 | [JGiven port-to-port tests against in-memory fakes](0039-jgiven-port-to-port-tests-with-in-memory-fakes.md) | Accepted |
 | 0040 | [Where Playwright E2E tests run](0040-playwright-e2e-placement.md) | Accepted |
 | 0041 | [Claude Code first, with AGENTS.md as the source of truth](0041-claude-code-first-agents-md.md) | Accepted |
-| 0042 | [SDLC skill chain: refine, plan, implement, review and ship](0042-sdlc-skill-chain.md) | Proposed (details to be designed) |
+| 0042 | [SDLC skill chain: refine, plan, implement, review and ship](0042-sdlc-skill-chain.md) | Proposed (details to be designed; orchestration decided in [0118](0118-loop-orchestration.md)) |
 | 0043 | [Agents merge autonomously after a green build and a demo](0043-autonomous-merge-gated-by-demo.md) | Accepted |
 | 0044 | [Interactive /demo with feedback triage](0044-interactive-demo-and-feedback-triage.md) | Accepted (flow in [0068](0068-demo-flow.md); skill text to be written) |
 | 0045 | [In-repo backlog organized as status folders](0045-in-repo-backlog-status-folders.md) | Accepted |
@@ -123,3 +123,4 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0115 | [Playwright: traces, fixed names and one context per actor](0115-playwright-traces-names-and-multiple-actors.md) | Accepted |
 | 0116 | [Use-case size and vertical slicing](0116-use-case-size-and-slicing.md) | Accepted |
 | 0117 | ["Observed, not tested" in use cases](0117-observed-not-tested.md) | Accepted |
+| 0118 | [Loop orchestration: one session, skill-scoped gates, committed stage state](0118-loop-orchestration.md) | Accepted |
