@@ -124,3 +124,4 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0116 | [Use-case size and vertical slicing](0116-use-case-size-and-slicing.md) | Accepted |
 | 0117 | ["Observed, not tested" in use cases](0117-observed-not-tested.md) | Accepted |
 | 0118 | [Loop orchestration: one session, skill-scoped gates, committed stage state](0118-loop-orchestration.md) | Accepted |
+| 0119 | [Two loop routines, and the contents of the stages](0119-loop-routines-and-stages.md) | Accepted |

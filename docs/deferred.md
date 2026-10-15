@@ -25,9 +25,12 @@ These topics were deliberately deferred during the design of blueprint (2026-10-
 - **plan**: the format of the plan, and how it covers modules, onion layers, spec and migration changes.
 - **implement**: the order of steps (acceptance test, spec, code), and when to stop and ask.
 - **review + ship**: the self-review checklist (architecture rules, expand/contract migrations, correct commit type), and handling CI failures.
-- The gate script for each stage (what exactly it checks) and the format of the stage state file.
+- The gate script for each stage (what exactly it checks) and the format of the stage state file and the plan file.
+- The additional gates before the PR (e.g. PR title type, catalog up to date, state and plan file removed) and further review focus areas ([0119](adr/0119-loop-routines-and-stages.md)).
+- The detail of **refine**: use-case format, security impact section, criticality and Gherkin rules, and the default rules for assumed answers.
 
 **Already decided (inputs):**
+- The two loop routines, item selection, and the contents of plan, implement and review+ship ([0119](adr/0119-loop-routines-and-stages.md)).
 - How the loop chains the skills, handles failures and starts follow-up runs ([0118](adr/0118-loop-orchestration.md)).
 - Backlog folders and flow ([0074](adr/0074-implemented-backlog-items-are-deleted.md)).
 - Item templates as Cockburn use cases ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
