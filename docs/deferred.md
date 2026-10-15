@@ -4,7 +4,7 @@ These topics were deliberately deferred during the design of blueprint (2026-10-
 
 ## 1. Testing strategy (as a whole)
 
-To be designed as a single piece, not item by item.
+To be designed as a single piece, not item by item. A draft that resolves this topic is in [testing-strategy.md](testing-strategy.md); it becomes ADRs once reviewed.
 
 **Open:**
 - Coverage and quality-gate thresholds (JaCoCo, SonarCloud "new code"), e.g. a percentage, or mutation testing (PIT) on the domain and application layers.
