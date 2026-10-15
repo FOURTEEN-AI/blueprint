@@ -106,3 +106,6 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0098 | [Container image retention in GHCR](0098-ghcr-image-retention.md) | Accepted |
 | 0099 | [Backlog items for Dependabot major updates are deduplicated](0099-dependabot-major-items-are-deduplicated.md) | Accepted |
 | 0100 | [Alert rules are code-owned, dashboards are not](0100-alert-rules-are-code-owned.md) | Accepted |
+| 0101 | [Full-context API tests per use case](0101-full-context-api-tests-per-use-case.md) | Accepted |
+| 0102 | [Hooks: format on every edit, full build before stopping](0102-format-on-edit-and-full-build-stop-hook.md) | Accepted |
+| 0103 | [/demo enables auto-merge after a passed demo](0103-demo-enables-auto-merge.md) | Accepted |

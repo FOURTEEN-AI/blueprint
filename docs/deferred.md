@@ -8,7 +8,7 @@ To be designed as a single piece, not item by item.
 
 **Open:**
 - Coverage and quality-gate thresholds (JaCoCo, SonarCloud "new code"), e.g. a percentage, or mutation testing (PIT) on the domain and application layers.
-- How the test levels fit together, and what belongs on which level.
+- How the test levels fit together beyond the decisions below, and what belongs on which level.
 - Test data strategy, fakes versus contract tests for fakes, and test naming conventions.
 
 **Already decided (inputs):**
@@ -17,19 +17,19 @@ To be designed as a single piece, not item by item.
 - Playwright runs the full suite in CI and a smoke subset against previews and prod ([0040](adr/0040-playwright-e2e-placement.md)).
 - Use-case IDs are tags on tests, with a traceability check and the JGiven report on Pages ([0063](adr/0063-living-use-case-catalog-and-jgiven-report.md)).
 - Quality tooling is chosen; thresholds are open ([0034](adr/0034-code-quality-and-security-tooling.md)).
+- Every use case gets full-context API tests over real HTTP ([0101](adr/0101-full-context-api-tests-per-use-case.md)).
 - Infrastructure smoke tests survive `/bootstrap` and are exempt from the traceability check ([0092](adr/0092-infrastructure-smoke-tests.md)).
 
-## 2. Hooks and guardrails (AI kit)
+## 2. Guardrails and gates (AI kit)
 
-**Open:** which Claude Code hooks and settings the kit ships. Candidates discussed:
-- format on edit (Spotless/Prettier)
+**Open:** which actions hooks hard-block and which go through a permission prompt, and the permission allowlist. Candidates discussed:
 - block dangerous commands: pushing to `main`, force-push, editing guardrail files, reading secret-like files, destructive `fly`/Neon commands against prod
-- fast checks before the agent may stop (compile, unit tests, ArchUnit)
 - a permission allowlist
 
 **Already decided (inputs):**
 - Claude Code first, with AGENTS.md as the source of truth ([0041](adr/0041-claude-code-first-agents-md.md)).
-- CODEOWNERS protects `.github/`, `.claude/` the guardrail configuration and the alert rules ([0059](adr/0059-branch-protection-and-codeowners.md), [0089](adr/0089-codeowners-scope-and-admin-bypass.md), [0100](adr/0100-alert-rules-are-code-owned.md)).
+- Hooks format every edit and run the full build before the agent stops ([0102](adr/0102-format-on-edit-and-full-build-stop-hook.md)).
+- CODEOWNERS protects `.github/`, `.claude/`, the guardrail configuration and the alert rules ([0059](adr/0059-branch-protection-and-codeowners.md), [0089](adr/0089-codeowners-scope-and-admin-bypass.md), [0100](adr/0100-alert-rules-are-code-owned.md)).
 - A hook blocks commit-status API calls outside `/demo` ([0088](adr/0088-demo-status-from-local-sessions.md)).
 - The loop's GitHub App has no workflows permission ([0084](adr/0084-project-github-app-as-bot-identity.md)).
 - Conventional Commits are checked on PR titles in CI only, not by a local hook ([0096](adr/0096-pr-title-is-the-only-conventional-commit.md)).
@@ -44,12 +44,13 @@ To be designed as a single piece, not item by item.
 - **implement**: the order of steps (acceptance test, spec, code), and when to stop and ask.
 - **review + ship**: the self-review checklist (architecture rules, expand/contract migrations, correct commit type), and handling CI failures.
 - How the autonomous loop chains these skills and what it does when one fails ([0046](adr/0046-autonomous-backlog-loop.md)).
-- Who merges after a passed demo: the `/demo` session itself, or the autonomous loop on its next run ([0068](adr/0068-demo-flow.md)).
 
 **Already decided (inputs):**
 - Backlog folders and flow ([0074](adr/0074-implemented-backlog-items-are-deleted.md)).
 - Item templates as Cockburn use cases ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
 - The existing `grill-me` skill as the model for interactive refinement.
+- Refine runs during triage, so items in `ready/` are always fully dressed ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
+- `/demo` enables auto-merge after a passed demo ([0103](adr/0103-demo-enables-auto-merge.md)).
 
 ## 4. Skills catalog
 
