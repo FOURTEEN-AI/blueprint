@@ -109,3 +109,4 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0101 | [Full-context API tests per use case](0101-full-context-api-tests-per-use-case.md) | Accepted |
 | 0102 | [Hooks: format on every edit, full build before stopping](0102-format-on-edit-and-full-build-stop-hook.md) | Accepted |
 | 0103 | [/demo enables auto-merge after a passed demo](0103-demo-enables-auto-merge.md) | Accepted |
+| 0104 | [Devcontainer tools come from official sources, not community features](0104-devcontainer-tools-from-official-sources.md) | Accepted |
