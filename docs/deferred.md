@@ -33,6 +33,8 @@ These topics were deliberately deferred during the design of blueprint (2026-10-
 - The existing `grill-me` skill as the model for interactive refinement.
 - Refine runs during triage, so items in `ready/` are always fully dressed ([0062](adr/0062-backlog-items-as-cockburn-use-cases.md)).
 - `/demo` enables auto-merge after a passed demo ([0103](adr/0103-demo-enables-auto-merge.md)).
+- Size and slicing rules refine has to apply: one criticality, at most twelve scenarios, vertical slices ([0116](adr/0116-use-case-size-and-slicing.md)).
+- Refine judges criticality ([0106](adr/0106-criticality-and-quality-thresholds.md)) and fills in the optional sections Visibility rules, Invariants and Observed, not tested ([0108](adr/0108-visibility-rules-and-invariants-in-use-cases.md), [0117](adr/0117-observed-not-tested.md)).
 
 ## 3. Skills catalog
 
@@ -48,7 +50,9 @@ Declined for now: an AGENTS.md section listing every skill (existing or planned)
 - a contract test for every fake ([0107](adr/0107-contract-tests-for-fakes.md))
 - the exceptions register ([0110](adr/0110-test-exceptions-register.md))
 - the stage package location ([0111](adr/0111-test-naming-and-report-structure.md))
-- use-case traceability ([0063](adr/0063-living-use-case-catalog-and-jgiven-report.md))
+- use-case traceability across JGiven, Playwright and Vitest, with the "Observed, not tested" exemption ([0063](adr/0063-living-use-case-catalog-and-jgiven-report.md), [0112](adr/0112-frontend-tests-count-for-traceability.md), [0117](adr/0117-observed-not-tested.md))
+- the criticality annotation package ([0114](adr/0114-criticality-annotation-package-and-reassessment.md))
+- the item format: one criticality, at most twelve scenarios ([0116](adr/0116-use-case-size-and-slicing.md))
 
 ## To do during implementation
 

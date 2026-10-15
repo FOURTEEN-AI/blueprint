@@ -117,3 +117,9 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0109 | [Test hygiene: no retries, no sleeps, data through legal transitions](0109-test-hygiene.md) | Accepted |
 | 0110 | [Test exceptions register](0110-test-exceptions-register.md) | Accepted |
 | 0111 | [Test naming and the two-part JGiven report](0111-test-naming-and-report-structure.md) | Accepted |
+| 0112 | [Frontend tests count for traceability](0112-frontend-tests-count-for-traceability.md) | Accepted |
+| 0113 | [Round-trip tests for persistence adapters](0113-round-trip-tests-for-persistence-adapters.md) | Accepted |
+| 0114 | [Criticality: annotation package and re-assessment after bugs](0114-criticality-annotation-package-and-reassessment.md) | Accepted |
+| 0115 | [Playwright: traces, fixed names and one context per actor](0115-playwright-traces-names-and-multiple-actors.md) | Accepted |
+| 0116 | [Use-case size and vertical slicing](0116-use-case-size-and-slicing.md) | Accepted |
+| 0117 | ["Observed, not tested" in use cases](0117-observed-not-tested.md) | Accepted |
