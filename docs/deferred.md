@@ -36,11 +36,7 @@ These topics were deliberately deferred during the design of blueprint (2026-10-
 - Size and slicing rules refine has to apply: one criticality, at most twelve scenarios, vertical slices ([0116](adr/0116-use-case-size-and-slicing.md)).
 - Refine judges criticality ([0106](adr/0106-criticality-and-quality-thresholds.md)) and fills in the optional sections Visibility rules, Invariants and Observed, not tested ([0108](adr/0108-visibility-rules-and-invariants-in-use-cases.md), [0117](adr/0117-observed-not-tested.md)).
 
-## 3. Skills catalog
-
-Declined for now: an AGENTS.md section listing every skill (existing or planned) with its defining ADR. Planned skills are currently documented only in the ADRs.
-
-## 4. Test gate tooling
+## 3. Test gate tooling
 
 **Open:** how the test checks are implemented. Candidates: an external Gradle plugin (e.g. deterministic-gates), a convention plugin in this repository, or standard tools where they suffice (PIT, ArchUnit, Spring Modulith).
 

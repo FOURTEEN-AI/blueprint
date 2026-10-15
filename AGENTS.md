@@ -9,6 +9,12 @@ Instructions for AI coding agents working in this repository.
 - **Decisions** are recorded as ADRs in [docs/adr/](docs/adr/README.md). The index lists every ADR and its status.
 - **Deferred topics** and facts still to be verified are listed in [docs/deferred.md](docs/deferred.md).
 
+## Skills
+
+Only skills that exist in [.claude/skills/](.claude/skills/) are listed here. Planned skills live in the ADRs only. Add a skill to this list in the same change that creates it.
+
+- `grill-me`: interviews the user about a plan or design until shared understanding is reached.
+
 ## ADR rules
 
 - Before changing or proposing anything, **read the relevant ADRs**. Don't contradict an accepted ADR silently. If a change conflicts with one, point that out.
