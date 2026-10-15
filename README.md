@@ -20,7 +20,7 @@ flowchart LR
 
 1. Work lives in an in-repo **backlog** as Cockburn-style use cases ([0074](docs/adr/0074-implemented-backlog-items-are-deleted.md), [0062](docs/adr/0062-backlog-items-as-cockburn-use-cases.md)).
 2. A scheduled **Claude Code agent** picks the next item and runs it through a chain of skills: refine, plan, implement, review + ship. Acceptance tests are written first ([0042](docs/adr/0042-sdlc-skill-chain.md), [0046](docs/adr/0046-autonomous-backlog-loop.md)).
-3. Every pull request gets its own **preview environment** ([0055](docs/adr/0055-previews-on-fly-dev-and-environment-parity.md), [0064](docs/adr/0064-preview-databases-in-shared-neon-branch.md)).
+3. Every pull request from the repository itself gets its own **preview environment**, except Dependabot's ([0090](docs/adr/0090-pr-preview-environments.md)).
 4. For user-visible changes, a human runs **`/demo`**. Claude walks them through the preview, and their feedback either fixes the PR or goes into the backlog ([0044](docs/adr/0044-interactive-demo-and-feedback-triage.md), [0057](docs/adr/0057-demo-only-for-user-visible-changes.md)).
 5. When checks are green and the demo has passed, the agent merges. **semantic-release** then ships to production, with snapshots and automatic rollback as the safety net ([0043](docs/adr/0043-autonomous-merge-gated-by-demo.md), [0029](docs/adr/0029-pre-migration-neon-snapshots-and-auto-rollback.md)).
 
@@ -44,7 +44,7 @@ New projects are created from the template with **`/bootstrap`** and can pull in
 
 To run a project created from blueprint you'll need:
 
-- **GitHub**: repository, Actions, Container Registry and Pages
+- **GitHub**: repository, Actions, Container Registry and Pages, plus a GitHub App as the project's bot identity ([0084](docs/adr/0084-project-github-app-as-bot-identity.md))
 - **Fly.io**: hosting for production and previews
 - **Neon**: serverless PostgreSQL
 - **Cloudflare** (free plan): **your own domain** managed by Cloudflare, which is mandatory ([0052](docs/adr/0052-cloudflare-in-front-of-production.md))
@@ -54,6 +54,8 @@ To run a project created from blueprint you'll need:
 The complete list of accounts, secrets and settings is in [docs/setup.md](docs/setup.md).
 
 **Rough costs:** Neon, Cloudflare and SonarCloud have free tiers that cover a typical project. Fly.io has no real free tier for new accounts, but with scale-to-zero, a low-traffic project usually costs **a few dollars a month (roughly $0–10)**. Add **about €10–15 a year** for the domain. These are estimates. Check the providers' current pricing before you start.
+
+**Backups:** all recovery options live inside Neon (its point-in-time restore window and the last 5 pre-migration snapshots). If your project holds data you can't afford to lose, add your own backup outside Neon ([0094](docs/adr/0094-no-backup-outside-neon.md)).
 
 ## License
 

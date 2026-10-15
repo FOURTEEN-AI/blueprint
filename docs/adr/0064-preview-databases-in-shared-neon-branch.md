@@ -1,6 +1,6 @@
 # 0064. Preview databases: one shared Neon branch with a database per PR
 
-- Status: Accepted
+- Status: Superseded by [0090](0090-pr-preview-environments.md)
 - Date: 2026-10-14
 - Supersedes: [0051](0051-preview-databases-as-fresh-database-in-pr-branch.md)
 

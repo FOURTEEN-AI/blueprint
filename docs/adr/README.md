@@ -1,6 +1,8 @@
 # Architecture Decision Records
 
-Decisions that shape blueprint. The process is described in [0001](0001-record-architecture-decisions.md).
+Decisions that shape blueprint. The process is described in [0001](0001-record-architecture-decisions.md), and the `Extends` relation in [0076](0076-extends-relation-between-adrs.md).
+
+Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have since been superseded (e.g. 0027 or 0061). In that case, follow the *Superseded by* chain to the ADR in force.
 
 | # | Decision | Status |
 |---|----------|--------|
@@ -58,7 +60,7 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0052 | [Cloudflare in front of production](0052-cloudflare-in-front-of-production.md) | Accepted |
 | 0053 | [Turnstile bot check once per session for writes and WebSockets](0053-turnstile-session-for-writes-and-websockets.md) | Accepted |
 | 0054 | [Generic app-level abuse limits](0054-app-level-abuse-limits.md) | Accepted |
-| 0055 | [PR previews stay on fly.dev; environments differ only in configuration](0055-previews-on-fly-dev-and-environment-parity.md) | Accepted |
+| 0055 | [PR previews stay on fly.dev; environments differ only in configuration](0055-previews-on-fly-dev-and-environment-parity.md) | Superseded by 0090 |
 | 0056 | [Safeguards for blueprint's public demo deployment](0056-demo-deployment-safeguards.md) | Accepted |
 | 0057 | [A demo is required only for user-visible changes](0057-demo-only-for-user-visible-changes.md) | Accepted |
 | 0058 | [Dependabot merge and release policy](0058-dependabot-merge-and-release-policy.md) | Accepted |
@@ -67,7 +69,7 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0061 | [Backlog folders and flow](0061-backlog-folders-and-flow.md) | Superseded by 0074 |
 | 0062 | [Backlog items as Cockburn use cases with a security impact section](0062-backlog-items-as-cockburn-use-cases.md) | Accepted |
 | 0063 | [Living use-case catalog, ID-tagged tests and the JGiven report](0063-living-use-case-catalog-and-jgiven-report.md) | Accepted |
-| 0064 | [Preview databases: one shared Neon branch with a database per PR](0064-preview-databases-in-shared-neon-branch.md) | Accepted |
+| 0064 | [Preview databases: one shared Neon branch with a database per PR](0064-preview-databases-in-shared-neon-branch.md) | Superseded by 0090 |
 | 0065 | [Neon branch budget and snapshot retention](0065-neon-branch-budget.md) | Accepted |
 | 0066 | [Event types: JSON Schema with json-schema-to-typescript and jsonschema2pojo](0066-websocket-event-type-generation.md) | Accepted |
 | 0067 | [JGiven 3.x for JUnit 6 and Spring 7](0067-jgiven-3-for-junit-6.md) | Accepted |
@@ -84,3 +86,22 @@ Decisions that shape blueprint. The process is described in [0001](0001-record-a
 | 0078 | [A workflow turns Dependabot major updates into backlog items](0078-dependabot-majors-become-backlog-items.md) | Accepted |
 | 0079 | [A single setup inventory owned by /bootstrap](0079-single-setup-inventory.md) | Accepted |
 | 0080 | [No edge caching at Cloudflare](0080-no-edge-caching.md) | Accepted |
+| 0081 | [pnpm installed standalone, without corepack](0081-pnpm-standalone-without-corepack.md) | Accepted |
+| 0082 | [Edge rate limit on session and WebSocket paths, per-session write limit in the app](0082-edge-rate-limit-on-session-and-websocket-paths.md) | Accepted |
+| 0083 | [Fly tokens: app-scoped deploy token for production, org token for previews](0083-fly-tokens-per-purpose.md) | Accepted |
+| 0084 | [A project GitHub App is the identity of all automation, including the loop](0084-project-github-app-as-bot-identity.md) | Accepted |
+| 0085 | [Untrusted build, trusted deploy: secrets never reach PR code](0085-untrusted-build-trusted-deploy.md) | Accepted |
+| 0086 | [A single direct Neon connection for the pool, Flyway and LISTEN](0086-single-direct-neon-endpoint.md) | Accepted |
+| 0087 | [Production origin TLS: Fly certificate via DNS-01, Cloudflare Full (strict)](0087-production-origin-tls.md) | Accepted |
+| 0088 | [Demo status from local sessions: a hook as a speed bump](0088-demo-status-from-local-sessions.md) | Accepted |
+| 0089 | [CODEOWNERS covers all guardrail configuration; admin bypass for the maintainer](0089-codeowners-scope-and-admin-bypass.md) | Accepted |
+| 0090 | [PR preview environments](0090-pr-preview-environments.md) | Accepted |
+| 0091 | [Release safety: serialized releases, a revert after every rollback, alerts through GitHub](0091-release-safety.md) | Accepted |
+| 0092 | [Infrastructure smoke tests survive bootstrap](0092-infrastructure-smoke-tests.md) | Accepted |
+| 0093 | [The WebSocket pauses while the tab is hidden](0093-websocket-pauses-in-hidden-tabs.md) | Accepted |
+| 0094 | [No backup outside Neon](0094-no-backup-outside-neon.md) | Accepted |
+| 0095 | [Footer links to imprint and privacy policy](0095-legal-page-links.md) | Accepted |
+| 0096 | [The PR title is the only Conventional Commit that matters](0096-pr-title-is-the-only-conventional-commit.md) | Accepted |
+| 0097 | [OpenAPI generators: openapi-generator for Spring, openapi-typescript for the client](0097-openapi-generators.md) | Accepted |
+| 0098 | [Container image retention in GHCR](0098-ghcr-image-retention.md) | Accepted |
+| 0099 | [Backlog items for Dependabot major updates are deduplicated](0099-dependabot-major-items-are-deduplicated.md) | Accepted |

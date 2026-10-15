@@ -1,6 +1,6 @@
 # 0055. PR previews stay on fly.dev; environments differ only in configuration
 
-- Status: Accepted
+- Status: Superseded by [0090](0090-pr-preview-environments.md)
 - Date: 2026-10-14
 - Extends: [0051](0051-preview-databases-as-fresh-database-in-pr-branch.md)
 
