@@ -127,3 +127,4 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0119 | [Two loop routines, and the contents of the stages](0119-loop-routines-and-stages.md) | Accepted |
 | 0120 | [The workflow is organized in three parts: ideation, creation, validation](0120-ideation-creation-validation.md) | Accepted |
 | 0121 | [Human roles in the workflow](0121-human-roles-in-the-workflow.md) | Accepted |
+| 0122 | [The refine skill](0122-refine-skill.md) | Accepted |
