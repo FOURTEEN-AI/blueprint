@@ -1,6 +1,6 @@
 # 0119. Two loop routines, and the contents of the stages
 
-- Status: Accepted
+- Status: Accepted (schedules, start rules and item choice replaced by [0123](0123-pr-kinds-and-dispatch.md))
 - Date: 2026-10-15
 - Extends: [0118](0118-loop-orchestration.md) (splits its single routine in two), [0042](0042-sdlc-skill-chain.md), [0046](0046-autonomous-backlog-loop.md), [0062](0062-backlog-items-as-cockburn-use-cases.md)
 

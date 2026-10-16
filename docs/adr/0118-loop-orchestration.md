@@ -1,6 +1,6 @@
 # 0118. Loop orchestration: one session, skill-scoped gates, committed stage state
 
-- Status: Accepted
+- Status: Accepted (schedule and start rules replaced by [0123](0123-pr-kinds-and-dispatch.md))
 - Date: 2026-10-15
 - Extends: [0042](0042-sdlc-skill-chain.md), [0046](0046-autonomous-backlog-loop.md)
 

@@ -123,8 +123,11 @@ Accepted ADRs are never edited, so older ADRs may still refer to ADRs that have 
 | 0115 | [Playwright: traces, fixed names and one context per actor](0115-playwright-traces-names-and-multiple-actors.md) | Accepted |
 | 0116 | [Use-case size and vertical slicing](0116-use-case-size-and-slicing.md) | Accepted |
 | 0117 | ["Observed, not tested" in use cases](0117-observed-not-tested.md) | Accepted |
-| 0118 | [Loop orchestration: one session, skill-scoped gates, committed stage state](0118-loop-orchestration.md) | Accepted |
-| 0119 | [Two loop routines, and the contents of the stages](0119-loop-routines-and-stages.md) | Accepted |
+| 0118 | [Loop orchestration: one session, skill-scoped gates, committed stage state](0118-loop-orchestration.md) | Accepted (schedule and start rules replaced by [0123](0123-pr-kinds-and-dispatch.md)) |
+| 0119 | [Two loop routines, and the contents of the stages](0119-loop-routines-and-stages.md) | Accepted (schedules, start rules and item choice replaced by [0123](0123-pr-kinds-and-dispatch.md)) |
 | 0120 | [The workflow is organized in three parts: ideation, creation, validation](0120-ideation-creation-validation.md) | Accepted |
 | 0121 | [Human roles in the workflow](0121-human-roles-in-the-workflow.md) | Accepted |
 | 0122 | [The refine skill](0122-refine-skill.md) | Accepted |
+| 0123 | [Ideation and creation PRs, and the dispatch workflow](0123-pr-kinds-and-dispatch.md) | Accepted |
+| 0124 | [Gates: one source set, Gradle tasks and the stage files](0124-gates.md) | Accepted |
+| 0125 | [Guardrails without blocking hooks](0125-guardrails-without-hooks.md) | Accepted |
